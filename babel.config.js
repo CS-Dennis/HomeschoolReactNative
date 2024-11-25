@@ -1,8 +1,18 @@
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  env: {
-    production: {
-      plugins: ['react-native-paper/babel'],
-    },
-  },
+  presets: ['@react-native'],
 };
+// module.exports = {
+//   presets: ['module:@react-native/babel-preset'],
+//   overrides: [
+//     {
+//       plugins: [
+//         [
+//           '@babel/plugin-transform-private-methods',
+//           {
+//             loose: true,
+//           },
+//         ],
+//       ],
+//     },
+//   ],
+// };

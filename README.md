@@ -55,3 +55,19 @@
 ### Z https://www.youtube.com/watch?v=wLu-bccANRg
 
 ### Alphabet song: https://www.youtube.com/watch?v=jwOSr7bX1Tc
+
+# Writing
+
+# Math
+
+## addition
+
+## subtraction
+
+## multiplication
+
+## division
+
+# Libraries:
+
+## animation: react-native-animatable

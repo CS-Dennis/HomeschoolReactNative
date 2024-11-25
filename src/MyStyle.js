@@ -3,7 +3,7 @@ import { theme } from './MyTheme';
 
 export const myStyle = StyleSheet.create({
   background: {
-    backgroundColor: theme.colors.lightPink,
+    backgroundColor: '#FFFFFF',
     flex: 1,
   },
 

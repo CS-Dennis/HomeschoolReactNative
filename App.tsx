@@ -4,6 +4,8 @@ import React from 'react';
 import { PaperProvider, useTheme } from 'react-native-paper';
 import { theme } from './src/MyTheme';
 import Home from './src/screen/Home';
+import AlphabetVideos from './src/screen/AlphabetVideos';
+import MathScreen from './src/screen/MathScreen';
 
 const Stack = createNativeStackNavigator();
 export type AppTheme = typeof theme;
@@ -13,10 +15,22 @@ function App(): React.JSX.Element {
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="home">
           <Stack.Screen
-            name="Home"
+            name="home"
             component={Home}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="alphabetVideos"
+            component={AlphabetVideos}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="math"
+            component={MathScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

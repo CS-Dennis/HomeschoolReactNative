@@ -1,0 +1,78 @@
+import React, { useState } from 'react';
+import { Image, View } from 'react-native';
+import PrimaryButton from './PrimaryButton';
+import { Text, TextInput } from 'react-native-paper';
+import { MathQuestionType } from '../types/MathQuestionType';
+import { theme } from '../MyTheme';
+
+export default function PlusQuestion({
+  setQuestionType,
+}: {
+  setQuestionType: (questionType: MathQuestionType) => void;
+}) {
+  const [firstNumber, setFirstNumber] = useState(
+    Math.floor(Math.random() * 100)
+  );
+  const [secondNumber, setSecondNumber] = useState(
+    Math.floor(Math.random() * 100)
+  );
+  const [resultNumber, setResultNumber] = useState(firstNumber + secondNumber);
+  const [userInput, setUserInput] = useState('');
+
+  const submitAnswer = () => {
+    if (resultNumber === parseInt(userInput)) {
+      console.log('correct');
+    } else {
+      console.log('incorrect');
+    }
+  };
+
+  return (
+    <View>
+      <View style={{ alignSelf: 'center' }}>
+        <PrimaryButton
+          title="Choose Type Again"
+          action={() => setQuestionType(null)}
+        />
+      </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignSelf: 'center',
+          marginTop: 50,
+        }}
+      >
+        <Text style={{ fontSize: 60 }}>{firstNumber}</Text>
+        <Text style={{ fontSize: 60 }}>+</Text>
+        <Text style={{ fontSize: 60 }}>{secondNumber}</Text>
+        <Text style={{ fontSize: 60 }}>=</Text>
+        <TextInput
+          style={{ fontSize: 60, width: 200 }}
+          defaultValue=""
+          keyboardType="number-pad"
+          placeholder="Result"
+          multiline={false}
+          numberOfLines={1}
+          underlineColor={theme.colors.rosePink}
+          activeUnderlineColor={theme.colors.rosePink}
+          textColor={theme.colors.rosePink}
+          onChangeText={(text) => setUserInput(text)}
+        />
+        <View style={{ justifyContent: 'center', marginLeft: 40 }}>
+          <PrimaryButton title="Submit" action={submitAnswer} />
+        </View>
+      </View>
+
+      <View
+        style={{
+          alignItems: 'center',
+        }}
+      >
+        <Image
+          source={require('../assets/icons/thumbsup.png')}
+          style={{ width: 200, height: 200 }}
+        />
+      </View>
+    </View>
+  );
+}
