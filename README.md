@@ -1,79 +1,57 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Video List:
 
-# Getting Started
+## Letter songs:
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+### A https://www.youtube.com/watch?v=hBAuIzZttP4
 
-## Step 1: Start the Metro Server
+### B https://www.youtube.com/watch?v=W5D3ySh7s2c
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+### C https://www.youtube.com/watch?v=ieo0LPYdUfQ
 
-To start Metro, run the following command from the _root_ of your React Native project:
+### D https://www.youtube.com/watch?v=NqntSJGu1t0
 
-```bash
-# using npm
-npm start
+### E https://www.youtube.com/watch?v=Cm4OnFLl5Uw
 
-# OR using Yarn
-yarn start
-```
+### F https://www.youtube.com/watch?v=oT5Rzwj1xdw
 
-## Step 2: Start your Application
+### G https://www.youtube.com/watch?v=ru0KCAS5zuY
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### H https://www.youtube.com/watch?v=C8EtaVKk8Fg
 
-### For Android
+### I https://www.youtube.com/watch?v=tGxaEdXOSk8
 
-```bash
-# using npm
-npm run android
+### J https://www.youtube.com/watch?v=TeYynmQ0v3Q
 
-# OR using Yarn
-yarn android
-```
+### K https://www.youtube.com/watch?v=j_LNrXd7Jx8
 
-### For iOS
+### L https://www.youtube.com/watch?v=T4YvWb0WMRQ
 
-```bash
-# using npm
-npm run ios
+### M https://www.youtube.com/watch?v=YiK7IL0kqd0
 
-# OR using Yarn
-yarn ios
-```
+### N https://www.youtube.com/watch?v=hCxv2ZPU3vg
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### O https://www.youtube.com/watch?v=-EgEt0aru90
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### P https://www.youtube.com/watch?v=HMMy6Y-nduE
 
-## Step 3: Modifying your App
+### Q https://www.youtube.com/watch?v=US7-1k5oHdE
 
-Now that you have successfully run the app, let's modify it.
+### R https://www.youtube.com/watch?v=-9BzWBufH1s
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+### S https://www.youtube.com/watch?v=1orYZAoGgoQ
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+### T https://www.youtube.com/watch?v=M5gUg06rock
 
-## Congratulations! :tada:
+### U https://www.youtube.com/watch?v=yWiRgOuaS84
 
-You've successfully run and modified your React Native App. :partying_face:
+### V https://www.youtube.com/watch?v=A1BeBFqwyFc
 
-### Now what?
+### W https://www.youtube.com/watch?v=4yCg2dZaaD0
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+### X https://www.youtube.com/watch?v=qj4nyH2aWVc
 
-# Troubleshooting
+### Y https://www.youtube.com/watch?v=TWJSE_p0akY
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### Z https://www.youtube.com/watch?v=wLu-bccANRg
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### Alphabet song: https://www.youtube.com/watch?v=jwOSr7bX1Tc
