@@ -7,6 +7,7 @@ import { MathQuestionType } from '../types/MathQuestionType';
 import { theme } from '../MyTheme';
 import PrimaryButton from './PrimaryButton';
 import PlusQuestion from './PlusQuestion';
+import MinusQuestion from './MinusQuestion';
 
 export default function MathQuesiton() {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
@@ -20,7 +21,9 @@ export default function MathQuesiton() {
   return (
     <>
       <View style={{ flexDirection: 'column' }}>
-        <Text style={{ textAlign: 'center', fontSize: 40 }}>Math Question</Text>
+        <Text style={{ textAlign: 'center', fontSize: 40 }}>
+          Math Questions
+        </Text>
       </View>
 
       {!questionType && (
@@ -43,9 +46,7 @@ export default function MathQuesiton() {
                 opacity: pressed ? 0.5 : 1,
                 justifyContent: 'center',
               })}
-              onPress={() => {
-                setQuestionType('plus');
-              }}
+              onPress={() => setQuestionType('plus')}
             >
               <Image
                 source={require('../assets/icons/plus.png')}
@@ -57,7 +58,7 @@ export default function MathQuesiton() {
                 opacity: pressed ? 0.5 : 1,
                 justifyContent: 'center',
               })}
-              onPress={() => {}}
+              onPress={() => setQuestionType('minus')}
             >
               <Image
                 source={require('../assets/icons/minus.png')}
@@ -70,6 +71,7 @@ export default function MathQuesiton() {
                 justifyContent: 'center',
               })}
               onPress={() => {}}
+              disabled
             >
               <Image
                 source={require('../assets/icons/multiply.png')}
@@ -82,6 +84,7 @@ export default function MathQuesiton() {
                 justifyContent: 'center',
               })}
               onPress={() => {}}
+              disabled
             >
               <Image
                 source={require('../assets/icons/divide.png')}
@@ -92,10 +95,19 @@ export default function MathQuesiton() {
         </>
       )}
 
-      {/* when question type is selected */}
-      {questionType === 'plus' && (
-        <PlusQuestion setQuestionType={setQuestionType} />
+      {questionType !== null && (
+        <View style={{ alignSelf: 'center' }}>
+          <PrimaryButton
+            title="Choose Type Again"
+            action={() => setQuestionType(null)}
+          />
+        </View>
       )}
+
+      {/* when question type is selected */}
+      {questionType === 'plus' && <PlusQuestion />}
+
+      {questionType === 'minus' && <MinusQuestion />}
     </>
   );
 }

@@ -6,11 +6,7 @@ import { MathQuestionType } from '../types/MathQuestionType';
 import { theme } from '../MyTheme';
 import { generateMathQuestion } from '../util';
 
-export default function PlusQuestion({
-  setQuestionType,
-}: {
-  setQuestionType: (questionType: MathQuestionType) => void;
-}) {
+export default function PlusQuestion() {
   const [firstNumber, setFirstNumber] = useState(
     Math.floor(Math.random() * 100)
   );
@@ -54,12 +50,6 @@ export default function PlusQuestion({
 
   return (
     <View>
-      <View style={{ alignSelf: 'center' }}>
-        <PrimaryButton
-          title="Choose Type Again"
-          action={() => setQuestionType(null)}
-        />
-      </View>
       <View
         style={{
           flexDirection: 'row',
@@ -68,7 +58,7 @@ export default function PlusQuestion({
         }}
       >
         <Text style={{ fontSize: 60 }}>{firstNumber}</Text>
-        <Text style={{ fontSize: 60 }}>+</Text>
+        <Text style={{ fontSize: 60, paddingHorizontal: 10 }}>+</Text>
         <Text style={{ fontSize: 60 }}>{secondNumber}</Text>
         <Text style={{ fontSize: 60 }}>=</Text>
         <TextInput
