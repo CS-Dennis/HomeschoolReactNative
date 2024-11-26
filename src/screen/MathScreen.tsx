@@ -1,7 +1,7 @@
 import React from 'react';
 import { myStyle } from '../MyStyle';
 import { useAppTheme } from '../../App';
-import { StatusBar, View } from 'react-native';
+import { ScrollView, StatusBar, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PopBackButton from '../component/PopBackButton';
 import MathQuesiton from '../component/MathQuesiton';
@@ -16,9 +16,11 @@ export default function MathScreen() {
           <PopBackButton />
         </View>
 
-        <View>
-          <MathQuesiton />
-        </View>
+        <ScrollView>
+          <View>
+            <MathQuesiton />
+          </View>
+        </ScrollView>
       </SafeAreaView>
     </>
   );
