@@ -4,6 +4,7 @@ import PrimaryButton from './PrimaryButton';
 import { Text, TextInput } from 'react-native-paper';
 import { MathQuestionType } from '../types/MathQuestionType';
 import { theme } from '../MyTheme';
+import { generateMathQuestion } from '../util';
 
 export default function PlusQuestion({
   setQuestionType,
@@ -19,12 +20,36 @@ export default function PlusQuestion({
   const [resultNumber, setResultNumber] = useState(firstNumber + secondNumber);
   const [userInput, setUserInput] = useState('');
 
+  const [resetQuestionFlag, setResetQuestionFlag] = useState(false);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
+
   const submitAnswer = () => {
+    if (userInput.trim() === '') {
+      return;
+    }
+
+    setResetQuestionFlag(true);
     if (resultNumber === parseInt(userInput)) {
       console.log('correct');
+      setIsAnswerCorrect(true);
     } else {
       console.log('incorrect');
+      setIsAnswerCorrect(false);
     }
+  };
+
+  const resetQuestion = () => {
+    setResetQuestionFlag(false);
+    setUserInput('');
+    setIsAnswerCorrect(null);
+
+    generateMathQuestion(
+      'plus',
+      2,
+      setFirstNumber,
+      setSecondNumber,
+      setResultNumber
+    );
   };
 
   return (
@@ -49,6 +74,7 @@ export default function PlusQuestion({
         <TextInput
           style={{ fontSize: 60, width: 200 }}
           defaultValue=""
+          value={userInput}
           keyboardType="number-pad"
           placeholder="Result"
           multiline={false}
@@ -59,7 +85,11 @@ export default function PlusQuestion({
           onChangeText={(text) => setUserInput(text)}
         />
         <View style={{ justifyContent: 'center', marginLeft: 40 }}>
-          <PrimaryButton title="Submit" action={submitAnswer} />
+          {!resetQuestionFlag ? (
+            <PrimaryButton title="Submit" action={submitAnswer} />
+          ) : (
+            <PrimaryButton title="Next Question" action={resetQuestion} />
+          )}
         </View>
       </View>
 
@@ -68,10 +98,19 @@ export default function PlusQuestion({
           alignItems: 'center',
         }}
       >
-        <Image
-          source={require('../assets/icons/thumbsup.png')}
-          style={{ width: 200, height: 200 }}
-        />
+        {isAnswerCorrect && (
+          <Image
+            source={require('../assets/icons/thumbsup.png')}
+            style={{ width: 200, height: 200 }}
+          />
+        )}
+
+        {isAnswerCorrect === false && (
+          <Image
+            source={require('../assets/icons/thumbsdown.png')}
+            style={{ width: 200, height: 200 }}
+          />
+        )}
       </View>
     </View>
   );
