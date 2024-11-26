@@ -6,6 +6,7 @@ import { theme } from './src/MyTheme';
 import Home from './src/screen/Home';
 import AlphabetVideos from './src/screen/AlphabetVideos';
 import MathScreen from './src/screen/MathScreen';
+import WritingScreen from './src/screen/WritingScreen';
 
 const Stack = createNativeStackNavigator();
 export type AppTheme = typeof theme;
@@ -31,6 +32,12 @@ function App(): React.JSX.Element {
           <Stack.Screen
             name="math"
             component={MathScreen}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="writing"
+            component={WritingScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

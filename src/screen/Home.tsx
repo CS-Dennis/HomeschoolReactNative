@@ -45,9 +45,8 @@ export default function Home() {
               <Pressable
                 style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1 })}
                 onPress={() => {
-                  navigation.navigate('alphabetVideos');
+                  navigation.navigate('writing');
                 }}
-                disabled
               >
                 <Image
                   source={require('../assets/icons/writing.png')}
