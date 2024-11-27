@@ -27,3 +27,15 @@ export const alphabetVideoList: any = {
   y: 'https://www.youtube.com/watch?v=TWJSE_p0akY',
   z: 'https://www.youtube.com/watch?v=wLu-bccANRg',
 };
+
+export const sketchColors = {
+  pink: '#ff598f',
+  yellow: '#ffff01',
+  lightGreen: '#68fa9f',
+  purple: '#6c23e6',
+  blue: '#0d9cf4',
+  orange: '#ff9900',
+  black: '#282a2d',
+  red: '#f81c00',
+  grey: '#d5d8dd',
+};

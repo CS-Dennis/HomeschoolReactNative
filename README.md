@@ -71,3 +71,5 @@
 # Libraries:
 
 ## animation: react-native-animatable
+
+## paiting library: @sourcetoad/react-native-sketch-canvas

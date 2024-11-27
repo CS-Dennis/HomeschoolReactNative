@@ -62,7 +62,7 @@ export default function MinusQuestion() {
           <Text style={{ fontSize: 60 }}>{secondNumber}</Text>
           <Text style={{ fontSize: 60 }}>=</Text>
           <TextInput
-            style={{ fontSize: 60, width: 200 }}
+            style={{ fontSize: 60, width: 250 }}
             defaultValue=""
             value={userInput}
             keyboardType="number-pad"
