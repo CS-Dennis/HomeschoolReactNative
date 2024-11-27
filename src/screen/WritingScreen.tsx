@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Image, Pressable, ScrollView, StatusBar, View } from 'react-native';
 import { Button, FAB, IconButton, Portal, Text } from 'react-native-paper';
 import { theme } from '../MyTheme';
@@ -6,10 +6,15 @@ import { myStyle } from '../MyStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PopBackButton from '../component/PopBackButton';
 import { SketchCanvas } from '@sourcetoad/react-native-sketch-canvas';
-import { sketchColors } from '../constant';
+import { allLetters, sketchColors } from '../constant';
+import PrimaryButton from '../component/PrimaryButton';
 
 export default function WritingScreen() {
   const canvas = useRef<any>(null);
+
+  const letterKeys: string[] = Object.keys(allLetters);
+  const [letters, setLetters] = useState<string[]>(['a']);
+  const [letterIndex, setLetterIndex] = useState(0);
 
   const [displayBrushFabGroup, setDisplayBrushFabGroup] =
     useState<boolean>(false);
@@ -28,6 +33,12 @@ export default function WritingScreen() {
   const clearCanvas = () => {
     canvas.current?.clear();
   };
+
+  useEffect(() => {
+    const tempLetters = letterKeys.map((key) => allLetters[key]);
+    setLetters([...tempLetters]);
+  }, []);
+
   return (
     <>
       <StatusBar backgroundColor={theme.colors.rosePink} />
@@ -40,6 +51,30 @@ export default function WritingScreen() {
           }}
         >
           <PopBackButton />
+
+          <View style={{ flexDirection: 'row' }}>
+            <View style={{ justifyContent: 'center' }}>
+              <PrimaryButton
+                title="Previous Letter"
+                action={() => {
+                  console.log(letterIndex);
+                  console.log((letterIndex - 1) % 26);
+
+                  setLetterIndex((i) =>
+                    (i - 1) % 26 >= 0
+                      ? (i - 1) % 26
+                      : 26 - Math.abs((i - 1) % 26)
+                  );
+                }}
+              />
+            </View>
+            <View style={{ justifyContent: 'center' }}>
+              <PrimaryButton
+                title="Next Letter"
+                action={() => setLetterIndex((i) => (i + 1) % 26)}
+              />
+            </View>
+          </View>
         </View>
 
         <View
@@ -49,7 +84,9 @@ export default function WritingScreen() {
             marginTop: -60,
           }}
         >
-          <Text style={{ textAlign: 'center', fontSize: 50 }}>A a</Text>
+          <Text style={{ textAlign: 'center', fontSize: 50 }}>{`${letters[
+            letterIndex
+          ].toUpperCase()} ${letters[letterIndex]}`}</Text>
         </View>
         <View style={{ flex: 1 }}>
           <View
